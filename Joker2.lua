@@ -25,7 +25,7 @@ if TokenBot and TokenBot:match('(%d+):(.*)') then
 local url , res = https.request('https://api.telegram.org/bot'..TokenBot..'/getMe')
 local Json_Info = JSON.decode(url)
 if res ~= 200 then
-print('\27[1;34mعذرا توكن البوت خطأ تحقق منه وارسله مره اخره \nBot Token is Wrong\n')
+print('\27[1;34mعذرا توكن البوت خطأ تحقق منه وارسله مره اخرى \nBot Token is Wrong\n')
 else
 io.write('\27[1;34mتم حفظ التوكن بنجاح \nThe token been saved successfully \n\27[0;39;49m')
 TheTokenBot = TokenBot:match("(%d+)")
@@ -34,7 +34,7 @@ Redis:set(SshId.."Info:Redis:Token",TokenBot)
 Redis:set(SshId.."Info:Redis:Token:User",Json_Info.result.username)
 end 
 else
-print('\27[1;34mلم يتم حفظ التوكن جرب مره اخره \nToken not saved, try again')
+print('\27[1;34mلم يتم حفظ التوكن جرب مره اخرى \nToken not saved, try again')
 end 
 os.execute('lua Joker2.lua')
 end
@@ -2236,60 +2236,60 @@ if Redis:get(Joker2.."Game:Smile"..msg.chat_id) then
 if text == Redis:get(Joker2.."Game:Smile"..msg.chat_id) then
 Redis:incrby(Joker2.."Num:Add:Games"..msg.chat_id..msg.sender.user_id, 1)  
 Redis:del(Joker2.."Game:Smile"..msg.chat_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد فزت في اللعبه \n𖥔 اللعب مره اخره وارسل - سمايل او سمايلات","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد فزت في اللعبه \n𖥔 اللعب مره اخرى وارسل - سمايل او سمايلات","md",true)  
 else
 Redis:del(Joker2.."Game:Smile"..msg.chat_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد خسرت حضا اوفر في المره القادمه\n𖥔 اللعب مره اخره وارسل - سمايل او سمايلات","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد خسرت حضا اوفر في المره القادمه\n𖥔 اللعب مره اخرى وارسل - سمايل او سمايلات","md",true)  
 end
 end 
 if Redis:get(Joker2.."Game:Monotonous"..msg.chat_id) then
 if text == Redis:get(Joker2.."Game:Monotonous"..msg.chat_id) then
 Redis:del(Joker2.."Game:Monotonous"..msg.chat_id)
 Redis:incrby(Joker2.."Num:Add:Games"..msg.chat_id..msg.sender.user_id, 1)  
-return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد فزت في اللعبه \n𖥔 اللعب مره اخره وارسل - الاسرع او ترتيب","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد فزت في اللعبه \n𖥔 اللعب مره اخرى وارسل - الاسرع او ترتيب","md",true)  
 else
 Redis:del(Joker2.."Game:Monotonous"..msg.chat_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد خسرت حضا اوفر في المره القادمه\n𖥔 اللعب مره اخره وارسل - الاسرع او ترتيب","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد خسرت حضا اوفر في المره القادمه\n𖥔 اللعب مره اخرى وارسل - الاسرع او ترتيب","md",true)  
 end
 end 
 if Redis:get(Joker2.."Game:Countrygof"..msg.chat_id) then
 if text == Redis:get(Joker2.."Game:Countrygof"..msg.chat_id) then
 Redis:incrby(Joker2.."Num:Add:Games"..msg.chat_id..msg.sender.user_id, 1)  
 Redis:del(Joker2.."Game:Countrygof"..msg.chat_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد فزت في اللعبه \n𖥔 اللعب مره اخره وارسل - اعلام","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد فزت في اللعبه \n𖥔 اللعب مره اخرى وارسل - اعلام","md",true)  
 else
 Redis:del(Joker2.."Game:Countrygof"..msg.chat_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد خسرت حظا اوفر في المره القادمه\n𖥔 اللعب مره اخره وارسل - اعلام","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد خسرت حظا اوفر في المره القادمه\n𖥔 اللعب مره اخرى وارسل - اعلام","md",true)  
 end
 end
 if Redis:get(Joker2.."Game:Riddles"..msg.chat_id) then
 if text == Redis:get(Joker2.."Game:Riddles"..msg.chat_id) then
 Redis:incrby(Joker2.."Num:Add:Games"..msg.chat_id..msg.sender.user_id, 1)  
 Redis:del(Joker2.."Game:Riddles"..msg.chat_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد فزت في اللعبه \n𖥔 اللعب مره اخره وارسل - حزوره","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد فزت في اللعبه \n𖥔 اللعب مره اخرى وارسل - حزوره","md",true)  
 else
 Redis:del(Joker2.."Game:Riddles"..msg.chat_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد خسرت حضا اوفر في المره القادمه\n𖥔 اللعب مره اخره وارسل - حزوره","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد خسرت حضا اوفر في المره القادمه\n𖥔 اللعب مره اخرى وارسل - حزوره","md",true)  
 end
 end
 if Redis:get(Joker2.."Game:Meaningof"..msg.chat_id) then
 if text == Redis:get(Joker2.."Game:Meaningof"..msg.chat_id) then
 Redis:incrby(Joker2.."Num:Add:Games"..msg.chat_id..msg.sender.user_id, 1)  
 Redis:del(Joker2.."Game:Meaningof"..msg.chat_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد فزت في اللعبه \n𖥔 اللعب مره اخره وارسل - معاني","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد فزت في اللعبه \n𖥔 اللعب مره اخرى وارسل - معاني","md",true)  
 else
 Redis:del(Joker2.."Game:Meaningof"..msg.chat_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد خسرت حضا اوفر في المره القادمه\n𖥔 اللعب مره اخره وارسل - معاني","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد خسرت حضا اوفر في المره القادمه\n𖥔 اللعب مره اخرى وارسل - معاني","md",true)  
 end
 end
 if Redis:get(Joker2.."Game:Reflection"..msg.chat_id) then
 if text == Redis:get(Joker2.."Game:Reflection"..msg.chat_id) then
 Redis:incrby(Joker2.."Num:Add:Games"..msg.chat_id..msg.sender.user_id, 1)  
 Redis:del(Joker2.."Game:Reflection"..msg.chat_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد فزت في اللعبه \n𖥔 اللعب مره اخره وارسل - العكس","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد فزت في اللعبه \n𖥔 اللعب مره اخرى وارسل - العكس","md",true)  
 else
 Redis:del(Joker2.."Game:Reflection"..msg.chat_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد خسرت حضا اوفر في المره القادمه\n𖥔 اللعب مره اخره وارسل - العكس","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد خسرت حضا اوفر في المره القادمه\n𖥔 اللعب مره اخرى وارسل - العكس","md",true)  
 end
 end
 if Redis:get(Joker2.."Game:Estimate"..msg.chat_id..msg.sender.user_id) then  
@@ -2320,20 +2320,20 @@ if Redis:get(Joker2.."Game:Difference"..msg.chat_id) then
 if text == Redis:get(Joker2.."Game:Difference"..msg.chat_id) then 
 Redis:del(Joker2.."Game:Difference"..msg.chat_id)
 Redis:incrby(Joker2.."Num:Add:Games"..msg.chat_id..msg.sender.user_id, 1)  
-return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد فزت في اللعبه \n𖥔 اللعب مره اخره وارسل - المختلف","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد فزت في اللعبه \n𖥔 اللعب مره اخرى وارسل - المختلف","md",true)  
 else
 Redis:del(Joker2.."Game:Difference"..msg.chat_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد خسرت حضا اوفر في المره القادمه\n𖥔 اللعب مره اخره وارسل - المختلف","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد خسرت حضا اوفر في المره القادمه\n𖥔 اللعب مره اخرى وارسل - المختلف","md",true)  
 end
 end
 if Redis:get(Joker2.."Game:Example"..msg.chat_id) then
 if text == Redis:get(Joker2.."Game:Example"..msg.chat_id) then 
 Redis:del(Joker2.."Game:Example"..msg.chat_id)
 Redis:incrby(Joker2.."Num:Add:Games"..msg.chat_id..msg.sender.user_id, 1)  
-return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد فزت في اللعبه \n𖥔 اللعب مره اخره وارسل - امثله","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد فزت في اللعبه \n𖥔 اللعب مره اخرى وارسل - امثله","md",true)  
 else
 Redis:del(Joker2.."Game:Example"..msg.chat_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد خسرت حضا اوفر في المره القادمه\n𖥔 اللعب مره اخره وارسل - امثله","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 لقد خسرت حضا اوفر في المره القادمه\n𖥔 اللعب مره اخرى وارسل - امثله","md",true)  
 end
 end
 if text then
@@ -6294,77 +6294,6 @@ local msg_id = msg.id/2097152/0.5
 end
 end
 
-if text == 'المبرمج مصطفي' or text == 'صاصا' or text == 'مصطفي' then  
-local UserId_Info = LuaTele.searchPublicChat("FFMFF")
-if UserId_Info.id then
-local  ban = LuaTele.getUser(UserId_Info.id)
-local  bain = LuaTele.getUserFullInfo(Sudo_Id)
-if  bain.bio then
-Bio =  bain.bio
-else
-Bio = 'لا يوجد'
-end
-local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
-if photo.total_count > 0 then
-local TestText = "  ❲ Joker2  Source ❳\n— — — — — — — — —\n 𖥔*Dev Name* :  [".. ban.first_name.."](tg://user?id="..UserId_Info.id..")\n𖥔 *Dev Bio* : [❲ "..Bio.." ❳]"
-keyboardd = {} 
-keyboardd.inline_keyboard = {
-{
-{text = '< Developers Joker2  >', url = "https://t.me/FFMFF"}
-},
-}
-local msg_id = msg.id/2097152/0.5 
- https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
-else
-local TestText = "- معلومات مطور السورس : \\nn: name Dev . [".. ban.first_name.."](tg://user?id="..UserId_Info.id..")\n\n ["..Bio.."]"
-keyboardd = {} 
-keyboardd.inline_keyboard = {
-{
-{text = '< Developers Joker2  >', url = "https://t.me/FFMFF"}
-},
-}
-local msg_id = msg.id/2097152/0.5 
- https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestText).."&reply_to_message_id="..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
-end
-end
-end
-
-if text == 'المبرمج بودي' or text == 'بودي' or text == 'بدبد' then  
-local UserId_Info = LuaTele.searchPublicChat("BBTBB")
-if UserId_Info.id then
-local  ban = LuaTele.getUser(UserId_Info.id)
-local  bain = LuaTele.getUserFullInfo(Sudo_Id)
-if  bain.bio then
-Bio =  bain.bio
-else
-Bio = 'لا يوجد'
-end
-local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
-if photo.total_count > 0 then
-local TestText = "  ❲ Joker2  Source ❳\n— — — — — — — — —\n 𖥔*Dev Name* :  [".. ban.first_name.."](tg://user?id="..UserId_Info.id..")\n𖥔 *Dev Bio* : [❲ "..Bio.." ❳]"
-keyboardd = {} 
-keyboardd.inline_keyboard = {
-{
-{text = '< Developers Joker2  >', url = "https://t.me/BBTBB"}
-},
-}
-local msg_id = msg.id/2097152/0.5 
- https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
-else
-local TestText = "- معلومات مطور السورس : \\nn: name Dev . [".. ban.first_name.."](tg://user?id="..UserId_Info.id..")\n\n ["..Bio.."]"
-keyboardd = {} 
-keyboardd.inline_keyboard = {
-{
-{text = '< Developers Joker2  >', url = "https://t.me/BBTBB"}
-},
-}
-local msg_id = msg.id/2097152/0.5 
- https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestText).."&reply_to_message_id="..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
-end
-end
-end
-
-
 
 if text == 'المطور' or text == 'مطور البوت' or text == 'مطور' then   
 local Get_Chat = LuaTele.getChat(msg_chat_id)
@@ -6394,97 +6323,7 @@ data = {
 }
 LuaTele.sendText(Sudo_Id,0,'*\n𖥔 مرحباً عزيزي المطور \nشخص ما يحتاج الي مساعده\n⩹━━━━𖥕Joker2𖥕━━━━⩺\n𖥔 اسمه :- '..klajq..' \n𖥔 ايديه :-  : '..msg.sender.user_id..'\n𖥔 - معرفة '..basgk..' \n*',"md",false, false, false, false, reply_markup)
 end
-if text == 'المبرمج مصطفي' or text == 'مصطفي' or text == 'صاصا' then  
-local Get_Chat = LuaTele.getChat(msg_chat_id)
-local Info_Chats = LuaTele.getSupergroupFullInfo(msg_chat_id)
-local bains = LuaTele.getUser(msg.sender.user_id)
-if bains.first_name then
-klajq = '*['..bains.first_name..'](tg://user?id='..bains.id..')*'
-else
-klajq = 'لا يوجد'
-end
-if bains.username then
-basgk = ' '..bains.username..' '
-else
-basgk = 'لا يوجد'
-end
-local czczh = '*'..bains.first_name..'*'
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = czczh, url = "https://t.me/"..bains.username..""},
-},
-{
-{text = Get_Chat.title, url = Info_Chats.invite_link.invite_link}, 
-},
-}
-}
-LuaTele.sendText(1127091205,0,'*\n𖥔 مرحباً عزيزي المبرمج مصطفي \nشخص ما يحتاج الي مساعده\n⩹━━━━𖥕Joker2𖥕━━━━⩺\n𖥔 اسمه :- '..klajq..' \n𖥔 ايديه :-  : '..msg.sender.user_id..'\n𖥔 - معرفة '..basgk..' \n*',"md",false, false, false, false, reply_markup)
-end
-if text == 'المبرمج بودي' or text == 'بودي' or text == 'بدبد' then  
-local Get_Chat = LuaTele.getChat(msg_chat_id)
-local Info_Chats = LuaTele.getSupergroupFullInfo(msg_chat_id)
-local bains = LuaTele.getUser(msg.sender.user_id)
-if bains.first_name then
-klajq = '*['..bains.first_name..'](tg://user?id='..bains.id..')*'
-else
-klajq = 'لا يوجد'
-end
-if bains.username then
-basgk = ' '..bains.username..' '
-else
-basgk = 'لا يوجد'
-end
-local czczh = '*'..bains.first_name..'*'
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = czczh, url = "https://t.me/"..bains.username..""},
-},
-{
-{text = Get_Chat.title, url = Info_Chats.invite_link.invite_link}, 
-},
-}
-}
-LuaTele.sendText(1127091205,0,'*\n𖥔 مرحباً عزيزي المبرمج بودي \nشخص ما يحتاج الي مساعده\n⩹━━━━𖥕Joker2𖥕━━━━⩺\n𖥔 اسمه :- '..klajq..' \n𖥔 ايديه :-  : '..msg.sender.user_id..'\n𖥔 - معرفة '..basgk..' \n*',"md",false, false, false, false, reply_markup)
-end
-if text == 'المساعد' or text == 'مساعد' then   
-local id = Redis:get(Joker2.."id:HELPBEVQ:Groups")
-urrl = https.request('http://api.telegram.org/bot'..Token..'/getchat?chat_id='..id)
-local banyt = JSON.decode(urrl)
-local bains = LuaTele.getUser(banyt)
-local name = ' '..banyt.result.first_name..' '
-if banyt.result.username then
-apapiy = ' '..banyt.result.username..' '
-else
-apapiy = 'BBTBB'
-end
-if banyt.result.first_name then
-klajq = ' '..banyt.result.first_name..' '
-else
-klajq = 'لا يوجد'
-end
-local abnj = "*  ❲ HELP BOT ❳\n— — — — — — — — —\n 𖥔*Dev Name* : "..banyt.result.first_name.." \n"
-keybanyt = {} 
-keybanyt.inline_keyboard = {
-{
-{text = name, url = "https://t.me/"..banyt.result.username..""},
-},
-}
-local msg_id = msg.id/2097152/0.5 
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg.chat_id.."&reply_to_message_id="..msg_id.."&photo=t.me/"..banyt.result.username.."&caption="..URL.escape(abnj).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keybanyt))
-local TestT = "*  ❲ HELP BOT ❳\n— — — — — — — — —\n 𖥔*HELP NAME* :  "..banyt.result.first_name.." \n"
-keyboardd = {} 
-keybanyt.inline_keyboard = {
-{
-{text = name, url = "https://t.me/"..banyt.result.username..""},
-},
-}
-local msg_id = msg.id/2097152/0.5 
- https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestT).."&reply_to_message_id="..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
-end
+
 if text == "غنيلي" then
 local t = "اليك اغنيه عشوائيه من البوت"
 Num = math.random(8,83)
@@ -6522,7 +6361,7 @@ if text == "ايديي"  then
 return LuaTele.sendText(msg_chat_id,msg_id,msg.sender.user_id,"md",true) 
 end
 
-if text == "تتجوزيني"  then
+if text == "تتزوجيني"  then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 local ban = LuaTele.getUser(Message_Reply.sender.user_id)
 local bain = LuaTele.getUser(msg.sender.user_id)
@@ -8668,32 +8507,32 @@ end
 Redis:del(Joker2.."Group:Link"..msg_chat_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,"𖥔 تم مسح الرابط ","md",true)             
 end
-if text == "الرابط" then
-if not Redis:get(Joker2.."Status:Link"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"𖥔  تم تعطيل جلب الرابط من قبل الادمنيه","md",true)
+if text == "الرابط" or text == "رابط" or text == "الينك" then
+if not Redis:get(Saidi.."Saidi:Status:Link"..msg_chat_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,"* ☽ تم تعطيل جلب الرابط من قبل الادمنيه*","md",true)
 end 
 local Get_Chat = LuaTele.getChat(msg_chat_id)
-local GetLink = Redis:get(Joker2.."Group:Link"..msg_chat_id) 
+local GetLink = Redis:get(Saidi.."Group:Link"..msg_chat_id) 
 if GetLink then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 {{text =Get_Chat.title, url = GetLink}, },}}
-return LuaTele.sendText(msg_chat_id, msg_id, "𖥔 Link Group : \n["..Get_Chat.title.. ']('..GetLink..')', 'md', true, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id, msg_id, "* ☽ Link Group : * \n["..Get_Chat.title.. ']('..GetLink..')', 'md', true, false, false, false, reply_markup)
 else 
 local LinkGroup = LuaTele.generateChatInviteLink(msg_chat_id,'Hussain',tonumber(msg.date+86400),0,true)
 if LinkGroup.code == 3 then
-return LuaTele.sendText(msg_chat_id,msg_id,"𖥔  لا استطيع جلب الرابط بسبب ليس لدي صلاحيه دعوه مستخدمين من خلال الرابط ","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"* ☽  لا استطيع جلب الرابط بسبب ليس لدي صلاحيه دعوه مستخدمين من خلال الرابط *","md",true)
 end
-zh = https.request('http://api.telegram.org/bot'..Token..'/getchat?chat_id='..msg_chat_id..'')
-zx = JSON.decode(zh)
-local tt = "𖥔 🖤 |ＬＩＮＫ ＧＲＯＵＰ.\n["..Get_Chat.title.. ']('..LinkGroup.invite_link..')\nـــــــــــــــــــــــــ\n['..LinkGroup.invite_link..']  '
+url = https.request('http://api.telegram.org/bot'..Token..'/getchat?chat_id='..msg_chat_id..'')
+json = JSON.decode(url)
+local txt = "* ☽ Link Group : * \n["..Get_Chat.title.. ']('..LinkGroup.invite_link..')'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = Get_Chat.title, url="https://t.me/"..zx.result.username..""},
+{text = Get_Chat.title, url=LinkGroup.invite_link},
 },
 }
-local msg_ban = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg.chat_id.."&reply_to_message_id="..msg_ban.."&photo=t.me/"..zx.result.username.."&caption="..URL.escape(tt).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+local rep = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg.chat_id.."&reply_to_message_id="..rep.."&photo=t.me/"..json.result.username.."&caption="..URL.escape(txt).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
 
@@ -10982,7 +10821,7 @@ if Get_Chat.id then
 local statusMem = LuaTele.getChatMember(Get_Chat.id,Joker2)
 if statusMem.status.luatele == "chatMemberStatusMember" then
 x = x + 1
-LuaTele.sendText(Get_Chat.id,0,'*𖥔 البوت عظو في المجموعة سوف اغادر ويمكنك تفعيلي مره اخره *',"md")
+LuaTele.sendText(Get_Chat.id,0,'*𖥔 البوت عضو في المجموعة سوف اغادر ويمكنك تفعيلي مره اخرى *',"md")
 Redis:srem(Joker2..'ChekBotAdd',Get_Chat.id)
 local keys = Redis:keys(Joker2..'*'..Get_Chat.id)
 for i = 1, #keys do
@@ -12215,15 +12054,6 @@ data = {
 {text = 'الاحصائيات 𖥔',type = 'text'},
 },
 {
-{text = 'المبرمج مصطفي',type = 'text'},{text = 'المطور',type = 'text'},
-},
-{
-{text = 'المبرمج عباس الجابري',type = 'text'},{text = 'المبرمج بودي',type = 'text'},
-},
-{
-{text = 'المساعد',type = 'text'},
-},
-{
 {text = 'تغيير المطور الاساسي 𖥔',type = 'text'} 
 },
 {
@@ -12299,12 +12129,6 @@ local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_pers
 data = {
 {
 {text = 'الاحصائيات 𖥔',type = 'text'},
-},
-{
-{text = 'المطور',type = 'text'},
-},
-{
-{text = 'المساعد',type = 'text'},
 },
 {
 {text = 'تغيير المطور الاساسي 𖥔',type = 'text'} 
@@ -12486,25 +12310,6 @@ local msg_id = msg.id/2097152/0.5
 end
 end
  
-if text == 'المبرمج مصطفي' or text == 'مصطفي' or text == 'المبرمج' or text == 'صاصا' then  
-local UserId_Info = LuaTele.searchPublicChat("FFMFF")
-if UserId_Info.id then
-local  ban = LuaTele.getUser(UserId_Info.id)
-local  bain = LuaTele.getUserFullInfo(Sudo_Id)
-if  bain.bio then
-Bio =  bain.bio
-else
-Bio = 'لا يوجد'
-end
-local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
-if photo.total_count > 0 then
-local TestText = "  ❲ Joker2  Source ❳\n— — — — — — — — —\n 𖥔*Dev Name* :  [".. ban.first_name.."](tg://user?id="..UserId_Info.id..")\n𖥔 *Dev Bio* : [❲ "..Bio.." ❳]"
-keyboardd = {} 
-keyboardd.inline_keyboard = {
-{
-{text = '< Developers Joker2  >', url = "https://t.me/FFMFF"}
-},
-}
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 else
@@ -12521,25 +12326,6 @@ end
 end
 end
 
-if text == 'المبرمج بودي' or text == 'بودي' or text == 'عبدالله' or text == 'بدبد' then  
-local UserId_Info = LuaTele.searchPublicChat("BBTBB")
-if UserId_Info.id then
-local  ban = LuaTele.getUser(UserId_Info.id)
-local  bain = LuaTele.getUserFullInfo(Sudo_Id)
-if  bain.bio then
-Bio =  bain.bio
-else
-Bio = 'لا يوجد'
-end
-local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
-if photo.total_count > 0 then
-local TestText = "  ❲ Joker2  Source ❳\n— — — — — — — — —\n 𖥔*Dev Name* :  [".. ban.first_name.."](tg://user?id="..UserId_Info.id..")\n𖥔 *Dev Bio* : [❲ "..Bio.." ❳]"
-keyboardd = {} 
-keyboardd.inline_keyboard = {
-{
-{text = '< Developers Joker2  >', url = "https://t.me/BBTBB"}
-},
-}
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 else
@@ -12596,7 +12382,7 @@ if Get_Chat.id then
 local statusMem = LuaTele.getChatMember(Get_Chat.id,Joker2)
 if statusMem.status.luatele == "chatMemberStatusMember" then
 x = x + 1
-LuaTele.sendText(Get_Chat.id,0,'*𖥔 البوت عظو في المجموعة سوف اغادر ويمكنك تفعيلي مره اخره *',"md")
+LuaTele.sendText(Get_Chat.id,0,'*𖥔 البوت عضو في المجموعة سوف اغادر ويمكنك تفعيلي مره اخرى *',"md")
 Redis:srem(Joker2..'ChekBotAdd',Get_Chat.id)
 local keys = Redis:keys(Joker2..'*'..Get_Chat.id)
 for i = 1, #keys do
@@ -13440,7 +13226,7 @@ if tonumber(GetMahibes) == tonumber(NumMahibes) then
 Redis:incrby(Joker2.."Num:Add:Games"..ChatId..IdUser, 1)  
 MahibesText = '*𖥔 الف مبروك حظك حلو اليوم\n𖥔 فزت ويانه وطلعت المحيبس بل عظمه رقم ⦗'..NumMahibes..'⦘*'
 else
-MahibesText = '*𖥔 للاسف لقد خسرت المحيبس بالعظمه رقم ⦗'..NumMahibes..'}\n𖥔 جرب حضك ويانه مره اخره*'
+MahibesText = '*𖥔 للاسف لقد خسرت المحيبس بالعظمه رقم ⦗'..NumMahibes..'}\n𖥔 جرب حضك ويانه مره اخرى*'
 end
 if NumMahibes == 1 then
 Mahibes1 = '🤚' else Mahibes1 = '👊'
