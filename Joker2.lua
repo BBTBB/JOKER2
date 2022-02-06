@@ -1153,7 +1153,7 @@ for k,v in pairs(msg.content.member_user_ids) do
 local Info_User = LuaTele.getUser(v) 
 print(v)
 if v == tonumber(Joker2) then
-local N = (Redis:get(Joker2.."Joker2:Name:Bot") or "باريس")
+local N = (Redis:get(Joker2.."Joker2:Name:Bot") or "جوكر")
 photo = LuaTele.getUserProfilePhotos(Joker2)
 return LuaTele.sendPhoto(msg.chat_id, 0, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,'* ╗ مـرحـبــا انا بــوت '..N..'\n╝•• اخـتصـاصـي  ادارة الجـروبــات\n╝•• مـن السـب والشـتيمـه والابــاحـه\n╝•• لتفعيل البــوت اتبــاع الخـطـوات\n╝••❶ ارفع البــوت مـشـرف في مـجـمـوعه\n╝•• وارسـل تفعيل في مـجـمـوعه\n╝••❷ لو ارت تفعيل ردود السـورس\n╝•• اكتب تفعيل ردود السـورس\n╝ مـطـور الـبــوت〘 @'..UserSudo..' 〙\n*', "md")
 end
@@ -2289,7 +2289,7 @@ if not msg.ControllerBot then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ☽ هاذا الامر يخص 〘 '..Controller_Num(1)..' 〙* ',"md",true)  
 end
 --os.execute('rm -rf Joker2.lua')
---download('https://raw.githubusercontent.com/JABWA-Joker2/JEKA/master/Joker2.lua','Joker2.lua')
+--download('https://raw.githubusercontent.com/BBTBB/Joker2/main/Joker2.lua')
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ☽ تم تحديث السورس * ',"md",true)  
 end
 if text == '〘 تعطيل الاذاعه 〙' or text == 'تعطيل الاذاعه' then
@@ -2490,7 +2490,7 @@ for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
 UserInfo.first_name = Name_User
 break
 end 
-NamesBot = (Redis:get(Joker2.."Joker2:Name:Bot") or "باريس")
+NamesBot = (Redis:get(Joker2.."Joker2:Name:Bot") or "جوكر")
 Groups = (Redis:scard(Joker2..'Joker2:ChekBotAdd') or 0)
 Users = (Redis:scard(Joker2..'Joker2:Num:User:Pv') or 0)
 if photo.total_count > 0 then
@@ -10294,7 +10294,7 @@ if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or te
 local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 local RinkBot = msg.Name_Controller
-photo = "https://t.me/jskskdkkdld/4"
+video = "http://t.me/paaariiissss/3"
 local Name = '*𓄼• ᴡᴇʟᴄᴏᴍᴇ ʏᴀ->* ['..RinkBot..'](tg://user?id='..user_info.id..')\n*𓄼• ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ JOKER TEAM*\n'
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -10428,7 +10428,7 @@ data = {
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,' ☽ اليك قسم الالعاب من سورس باريس ',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,' ☽ اليك قسم الالعاب من سورس جوكر ',"md",false, false, false, false, reply_markup)
 end
 if Redis:get(Joker2.."zhrfa"..msg.sender.user_id) == "sendzh" then
 zh = https.request('https://apiabs.ml/zrf.php?abs='..URL.escape(text)..'')
@@ -10470,7 +10470,7 @@ LuaTele.sendText(msg_chat_id,msg_id,t,"md",true)
 Redis:del(Joker2.."brgi"..msg.sender.user_id) 
 end
 if text == "الابراج" or text == "برجي" then
-LuaTele.sendText(msg_chat_id,msg_id,"* ☽ ارسل البرج الان لعرض التوقعات*","md",true) 
+LuaTele.sendText(msg_chat_id,msg_id,"☽ ارسل البرج الان لعرض التوقعات","md",true) 
 Redis:set(Joker2.."brgi"..msg.sender.user_id,"sendbr") 
 end
 if text and text:match("^برج (.*)$") then
@@ -11207,7 +11207,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𓄼• JOKER TEAM •??', url = 't.me/BBTBB'}, 
+{text = '𓄼• JOKER TEAM •𓄹', url = 't.me/BBTBB'}, 
 },
 }
 }
@@ -11381,7 +11381,7 @@ for Name_User in string.gmatch(Jabwa.first_name, "[^%s]+" ) do
 Jabwa.first_name = Name_User
 break
 end 
-local NamesBot = (Redis:get(Joker2.."Joker2:Name:Bot") or "باريس")
+local NamesBot = (Redis:get(Joker2.."Joker2:Name:Bot") or "جوكر")
 local BotName = {
     'اسمي '..NamesBot..' يا قلبي 😍💜',
     'اسمي '..NamesBot..' يا روحي 🙈❤️',
@@ -11414,7 +11414,7 @@ msgg = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(first_n).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
-if text == (Redis:get(Joker2.."Joker2:Name:Bot") or "باريس") then
+if text == (Redis:get(Joker2.."Joker2:Name:Bot") or "جوكر") then
 local photo = LuaTele.getUserProfilePhotos(Joker2)
 local Jabwa = LuaTele.getUser(Joker2)
 local sudo_info = LuaTele.getUser(Sudo_Id)
@@ -11424,7 +11424,7 @@ for Name_User in string.gmatch(Jabwa.first_name, "[^%s]+" ) do
 Jabwa.first_name = Name_User
 break
 end 
-local NamesBot = (Redis:get(Joker2.."Joker2:Name:Bot") or "باريس")
+local NamesBot = (Redis:get(Joker2.."Joker2:Name:Bot") or "جوكر")
 local BotName = {
 'نعم يروحي 🌝💙',
 'نعم يا قلب '..NamesBot..'',
@@ -11562,7 +11562,7 @@ local texting = {"اخر افلام شاهدتها",
 "اخر اغنية سمعتها ?", 
 "تكلم عن نفسك", 
 "ليه انت مش سالك", 
-"ما هيا عيوب سورس باريس؟ ", 
+"ما هيا عيوب سورس جوكر؟ ", 
 "اخر كتاب قرآته", 
 "روايتك المفضله ?", 
 "اخر اكله اكلتها", 
@@ -11578,13 +11578,13 @@ local texting = {"اخر افلام شاهدتها",
 " ما السيء في هذه الحياة ؟ ", 
 "أجمل شيء حصل معك خلال هذا الاسبوع ؟ ", 
 "سؤال ينرفزك ؟ ", 
-" هل يعجبك سورس باريس؟؟ ", 
+" هل يعجبك سورس جوكر؟؟ ", 
 " اكثر ممثل تحبه ؟ ", 
 "قد تخيلت شي في بالك وصار ؟ ", 
 "شيء عندك اهم من الناس ؟ ", 
 "تفضّل النقاش الطويل او تحب الاختصار ؟ ", 
 "وش أخر شي ضيعته؟ ", 
-"اي رايك في سورس باريس؟ ", 
+"اي رايك في سورس جوكر؟ ", 
 "كم مره حبيت؟ ", 
 " اكثر المتابعين عندك باي برنامج؟", 
 " آخر مره ضربت عشره كانت متى ؟", 
@@ -11878,7 +11878,7 @@ local texting = {"اخر افلام شاهدتها",
 return LuaTele.sendText(msg_chat_id,msg_id,texting[math.random(#texting)],'md')
 end
 end
-if text == "كتبات" or text == "حكمه" or text == "قصيده" then 
+if text == "كتابات" or text == "حكمه" or text == "قصيده" then 
 if Redis:get(Joker2.."Joker2:Status:Games"..msg.chat_id) then
 local texting = {"‏من ترك أمرهُ لله، أعطاه الله فوق ما يتمنَّاه💙 ", 
 "‏من علامات جمال المرأة .. بختها المايل ! ",
@@ -12318,7 +12318,7 @@ name = string.gsub(name,"🐇","🕊??🕊🕊🕊🐇🕊🕊🕊🕊")
 name = string.gsub(name,"🌑","🌚🌚🌚🌚🌚🌑🌚🌚🌚")
 name = string.gsub(name,"🌚","🌑🌑🌑🌑🌑🌚🌑🌑🌑")
 name = string.gsub(name,"⭐️","??🌟🌟🌟🌟🌟🌟🌟⭐️🌟🌟🌟")
-name = string.gsub(name,"✨","💫💫💫💫💫✨💫??💫💫")
+name = string.gsub(name,"✨","💫💫💫💫💫✨💫💫💫💫")
 name = string.gsub(name,"⛈","🌨🌨🌨🌨🌨⛈🌨🌨🌨🌨")
 name = string.gsub(name,"🌥","⛅️⛅️⛅️⛅️⛅️⛅️🌥⛅️⛅️⛅️⛅️")
 name = string.gsub(name,"⛄️","☃☃☃☃☃☃⛄️☃☃☃☃")
@@ -12480,7 +12480,7 @@ if text == '/start' then
 Redis:sadd(Joker2..'Joker2:Num:User:Pv',msg.sender.user_id)  
 if not msg.ControllerBot then
 if not Redis:get(Joker2.."Joker2:Start:Bot") then
-local CmdStart = '*\n ☽ أهلآ بك في بوت '..(Redis:get(Joker2.."Joker2:Name:Bot") or "باريس")..
+local CmdStart = '*\n ☽ أهلآ بك في بوت '..(Redis:get(Joker2.."Joker2:Name:Bot") or "جوكر")..
 '\n ☽ اختصاص البوت حماية المجموعات'..
 '\n ☽ لتفعيل البوت عليك اتباع مايلي ...'..
 '\n ☽ اضف البوت الى مجموعتك'..
@@ -13710,7 +13710,7 @@ local TextHelp = [[*
 𓄼• حروف •𓄹
 𓄼• اطردني •𓄹
 𓄼• انصحني •𓄹
-𓄼• كتبات •𓄹
+𓄼• كتابات •𓄹
 𓄼• غنيلي •𓄹
 𓄼• مستقبلي •𓄹
 ⩹┉┉┉┉⊶❲𖥳 JOKER 𖥳❳⊷┉┉┉┉⩺
